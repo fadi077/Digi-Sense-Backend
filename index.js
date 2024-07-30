@@ -1,8 +1,10 @@
 const express = require("express");
+const cors = require('cors');
 const sendMail = require("./sendMail");
 
 const app = express();
 const port = 3100;
+app.use(cors())
 app.use(express.json());
 
 app.post("/send-mail", async (req, res) => {
